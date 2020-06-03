@@ -13,3 +13,4 @@ for zeile in roh_daten:
             print(zeile.strip())
             print(m.groups())
             print("Maschinen-IP {}".format(m.group(4)))
+
