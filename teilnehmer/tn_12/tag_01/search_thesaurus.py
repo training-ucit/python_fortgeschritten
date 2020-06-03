@@ -7,6 +7,7 @@ def get_my_list(filepath):
 def search_list(my_list, search_val):
     for i in my_list:
         if search_val in i:
+            return i
             
 
 
