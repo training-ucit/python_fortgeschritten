@@ -6,7 +6,7 @@ fname="/home/coder/python_fortgeschritten/materialien/SampleLog.log"
 def get_data_file(path_file):
     """
     Diese Funktion holt den Inhalt aus einer Datei.
-    :params: path = string
+    :params: path = string - file path + name + ending
     :return: list
     """
     list = []
