@@ -9,7 +9,8 @@ def create_dict(path_file):
 
     return list
 
-def search
+def search():
+    pass
 
 def main():
     file_path = "/home/coder/python_fortgeschritten/materialien/openthesaurus.txt"
