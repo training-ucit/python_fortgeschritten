@@ -2,7 +2,7 @@ import re
 
 
 class StockValueReader:
-    """ Description	"""
+    """ This is a class which reads a csv-file converts it in a dict and has functions of getting data by question dates. """
     # dict{key= Datum: TT.MM.Jahr, value= [Werte]}
     daten = {}
 
