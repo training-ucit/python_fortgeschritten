@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 
 
@@ -54,7 +55,7 @@ class StockValueReader:
 
     def get_date_format(self, date):
         c, v, o, h, l = self.daten[date]
-        return "Date\t\tClose/Last\tVolume\t\tOpen\tHigh\t\tLow\n{}\t{}\t\t{}\t{}\t{}\t{}".format(date, c, v, o, h, l)
+        return "Date\t\tClose/Last\tVolume\t\tOpen\tHigh\tLow\n{}\t{}\t\t{}\t{}\t{}\t{}".format(date, c, v, o, h, l)
 
     def loop_get_date(self):
         """ Loop Input for "get_date" with checking of date and if date is in dictionary.
