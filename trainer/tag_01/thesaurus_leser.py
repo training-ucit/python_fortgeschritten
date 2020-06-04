@@ -46,6 +46,7 @@ def prepare_data(roh_daten, style="LIST"):
         raise Exception("Invalid argument {}".format(style))
     return arbeits_daten
 
+
 def search_thesaurus(words):
     while True:
         eingabe = input("Ihr Wort: ").strip()
