@@ -1,6 +1,18 @@
+"""
+Module that reads 
+"""
 datei_name = "/home/coder/python_fortgeschritten/materialien/openthesaurus.txt"
 
 def read_file(fname):
+    """
+    read_file reads text data in openthesaurus format into list.
+
+    - Comment lines are ignored
+    - \n are stripped
+
+    :fname: String, path of data file
+    :return: list of strings
+    """
     with open(datei_name, "r") as fd:
         roh_daten = []
         for zeile in fd.read().split("\n"):
@@ -9,6 +21,18 @@ def read_file(fname):
     return roh_daten
 
 def prepare_data(roh_daten, style="LIST"):
+    """
+    prepare_data makes a searchable dict or list out of a list of strings
+
+    - sep. char is ";" for the string with the words
+    - trhows Exception if styl is unknown
+
+    :roh_daten: list of strings
+    :style: type of datastructure to generate (DICT, LIST)
+
+    :returns: list of list if style: LIST
+              dict of list if style: DICT
+    """
     if style == "LIST":    
         arbeits_daten = []
         for zeile in roh_daten:
