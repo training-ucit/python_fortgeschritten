@@ -4,7 +4,7 @@ import sys
 import argparse
 
 def search_file(folder, fname):
-    for root, dirs, files in os.walk(folder):
+    for root, _, files in os.walk(folder):
         if fname in files:
             print(f"found: {os.path.join(root, fname)}")
             
