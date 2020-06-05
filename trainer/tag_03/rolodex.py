@@ -15,8 +15,8 @@ class RoloDex:
         for line in roh_daten:
             worte = line.strip("\n").split(";")
             self.rolo.append({"name":worte[0],
-                              "ort": worte[1],
                               "plz": worte[2],
+                              "ort": worte[1],
                               "strasse": worte[3]})
         return len(self.rolo)
 
@@ -29,6 +29,7 @@ class RoloDex:
                 fd.write(daten + "\n")
         
     def search(self, suchwort):
+        ergebnis = None
         for entry in self.rolo:
             if suchwort in entry["name"]:
                 ergebnis = entry
