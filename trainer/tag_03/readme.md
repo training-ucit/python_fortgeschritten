@@ -7,3 +7,4 @@
 - Betriebssystemzugriffe
 - Netzwerkzugriffe
 - Externe Anwendungssteuerung
+- Programmiertechniken
