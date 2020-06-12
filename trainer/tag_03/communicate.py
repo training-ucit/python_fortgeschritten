@@ -2,9 +2,10 @@
 ## get subprocess module 
 import subprocess
 import pprint
+import re
  
 ## call date command ##
-p = subprocess.Popen("netstat", stdout=subprocess.PIPE)
+p = subprocess.Popen(["netstat", "-a"], stdout=subprocess.PIPE)
  
 ## Talk with date command i.e. read data from stdout and stderr. Store this info in tuple ##
 ## Interact with process: Send data to stdin. Read data from stdout and stderr, until end-of-file is reached.  ##
@@ -14,5 +15,19 @@ p = subprocess.Popen("netstat", stdout=subprocess.PIPE)
  
 ## Wait for date to terminate. Get return returncode ##
 p_status = p.wait()
-pprint.pprint(output.decode("UTF-8").split("\n"))
-print("Command exit status/return code : ", p_status)
+if p_status == 0:
+    result = []
+    output = output.decode("UTF-8")
+
+    for zeile in output.split("\n"):
+        if "STREAM" in zeile and "CONNECTED" in zeile:
+           zeile = re.sub(r" +", " ", zeile) 
+           zeile = zeile.strip().split(" ")
+           result.append((zeile[4], zeile[6]))
+    
+    for zeile in result:
+        print(zeile)
+else:
+    print("S.th. weird happened to netstat")
+    exit(p_status)
+
